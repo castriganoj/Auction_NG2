@@ -17,7 +17,7 @@ import ProductDetailComponent from "./components/product-detail/product-detail";
     imports:      [ BrowserModule,
                     RouterModule.forRoot([
                         {path: '',                    component: HomeComponent},
-                        {path: 'products/:prodTitle', component: ProductDetailComponent}
+                        {path: 'products/:productID', component: ProductDetailComponent}
     ]) ],
     declarations: [ ApplicationComponent,
                     CarouselComponent,
