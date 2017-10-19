@@ -11,7 +11,7 @@ export default class ProductDetailComponent {
   reviews: Review[];
 
   constructor(route: ActivatedRoute, productService: ProductService){
-    let prodID: number = parseInt(route.snapshot.params['productID']);
+    let prodID: number = parseInt(route.snapshot.params['productId']);
 
     this.product = productService.getProductById(prodID);
     this.reviews = productService.getReviewsForProduct(this.product.id);
