@@ -1,7 +1,7 @@
 import { NgModule }      from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule} from '@angular/forms';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
 import ApplicationComponent from './components/application/application';
 import CarouselComponent from "./components/carousel/carousel";
@@ -16,7 +16,7 @@ import ProductDetailComponent from "./components/product-detail/product-detail";
 import {FilterPipe} from "./pipes/filter-pipe";
 
 @NgModule({
-    imports:      [ BrowserModule, ReactiveFormsModule,
+    imports:      [ BrowserModule, ReactiveFormsModule, FormsModule,
                     RouterModule.forRoot([
                         {path: '',                    component: HomeComponent},
                         {path: 'products/:productId', component: ProductDetailComponent}

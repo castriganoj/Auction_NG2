@@ -7,14 +7,25 @@
     </div>
     <div class="ratings">
         <p class="pull-right">{{ reviews.length }} reviews</p>
-        <p><auction-stars [rating]="product.rating"></auction-stars></p>
+        <p><auction-stars [rating]="product.rating" ></auction-stars></p>
     </div>
 </div>
 <div class="well" id="reviews-anchor">
     <div class="row">
         <div class="col-md-12"></div>
     </div>
-     <div class="row" *ngFor="let review of reviews">
+    <div class="text-right">
+        <button (click)="isReviewHidden = !isReviewHidden"
+                class="btn btn-success btn-green">Leave a Review</button>
+    </div>
+
+    <div [hidden]="isReviewHidden">
+        <div><auction-stars [(rating)]="newRating" [readonly]="false" class="large"></auction-stars></div>
+        <div><textarea [(ngModel)]="newComment"></textarea></div>
+        <div><button (click)="addReview()" class="btn">Add review</button></div>
+    </div>
+
+    <div class="row" *ngFor="let review of reviews">
         <hr>
         <div class="col-md-12">
             <auction-stars [rating]="review.rating"></auction-stars>
