@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {Product, ProductService} from '../../services/product.service';
+import {Observable} from 'rxjs/Observable';
 import 'rxjs/add/operator/debounceTime';
 
 @Component({
@@ -22,14 +23,14 @@ import 'rxjs/add/operator/debounceTime';
       </div>
     </div>
     <div class="row">
-      <div *ngFor="let product of products | filter:'title':filterCriteria" class="col-sm-4 col-lg-4 col-md-4">
+      <div *ngFor="let product of products | async |  filter:'title':filterCriteria" class="col-sm-4 col-lg-4 col-md-4">
         <auction-product-item [product]="product"></auction-product-item>
       </div>
     </div>
   `
 })
 export default class HomeComponent {
-  products: Product[] = [];
+  products: Observable<Product[]>;
   titleFilter: FormControl = new FormControl();
   filterCriteria: string;
 

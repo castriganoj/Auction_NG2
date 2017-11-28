@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {LocationStrategy, HashLocationStrategy} from '@angular/common';
+import { HttpModule } from '@angular/http';
 import ApplicationComponent from './components/application/application.component';
 import CarouselComponent from "./components/carousel/carousel.component";
 import FooterComponent from "./components/footer/footer.component";
@@ -16,7 +17,7 @@ import ProductDetailComponent from "./components/product-detail/product-detail.c
 import {FilterPipe} from "./pipes/filter.pipe";
 
 @NgModule({
-    imports:      [ BrowserModule, ReactiveFormsModule, FormsModule,
+    imports:      [ BrowserModule, ReactiveFormsModule, FormsModule,HttpModule,  
                     RouterModule.forRoot([
                         {path: '',                    component: HomeComponent},
                         {path: 'products/:productId', component: ProductDetailComponent}
