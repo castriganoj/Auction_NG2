@@ -1,10 +1,10 @@
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
-import { ProductService } from '../../services/product-service';
+import { ProductService } from '../../services/product.service';
 
 @Component({
   selector: 'auction-search',
-  templateUrl: 'app/components/search/search.html',
+  templateUrl: 'app/components/search/search.component.html',
   providers: [ProductService]
 })
 

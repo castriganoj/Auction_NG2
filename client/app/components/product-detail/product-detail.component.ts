@@ -1,13 +1,12 @@
 import {Component} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
-import {Product, Review, ProductService} from '../../services/product-service';
-import StarsComponent from '../stars/stars';
+import {Product, Review, ProductService} from '../../services/product.service';
+import StarsComponent from '../stars/stars.component';
 
 @Component({
   selector: 'auction-product-page',
   styles: ['auction-stars.large {font-size: 24px;}'],
-  templateUrl: 'app/components/product-detail/product-detail.html',
-  directives: [ StarsComponent]
+  templateUrl: 'app/components/product-detail/product-detail.component.html'
 })
 export default class ProductDetailComponent {
   product: Product;

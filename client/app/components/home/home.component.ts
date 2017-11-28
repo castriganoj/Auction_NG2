@@ -1,11 +1,11 @@
 import {Component} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {Product, ProductService} from '../../services/product-service';
+import {Product, ProductService} from '../../services/product.service';
 import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'auction-home-page',
-  styleUrls: ['app/components/home/home.css'],
+  styleUrls: ['app/components/home/home.component.css'],
   template: `
     <div class="row carousel-holder">
       <div class="col-md-12">
