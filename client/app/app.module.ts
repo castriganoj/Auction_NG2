@@ -17,7 +17,7 @@ import ProductDetailComponent from "./components/product-detail/product-detail.c
 import {FilterPipe} from "./pipes/filter.pipe";
 
 @NgModule({
-    imports:      [ BrowserModule, ReactiveFormsModule, FormsModule,HttpModule,  
+    imports:      [ BrowserModule, ReactiveFormsModule, FormsModule, HttpModule,  
                     RouterModule.forRoot([
                         {path: '',                    component: HomeComponent},
                         {path: 'products/:productId', component: ProductDetailComponent}

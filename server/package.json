@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "scripts": {
+    "tsc": "tsc",
+    "start": "node build/auction.js",
+    "dev": "nodemon build/auction.js"
+  },
+  "dependencies": {
+    "@types/express": "^4.0.28-alpha",
+    "@types/node": "^4.0.28-alpha",
+    "express": "^4.13.3",
+    "ws": "^1.1.1"
+  },
+  "devDependencies": {
+    "@types/es6-shim": "0.0.30",
+    "@types/ws": "0.0.29",
+    "nodemon": "^1.8.1",
+    "typescript": "^2.0.0"
+  }
+}

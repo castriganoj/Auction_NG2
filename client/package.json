@@ -4,24 +4,27 @@
     "start": "live-server"
   },
   "dependencies": {
-    "@angular/common": "^2.4.0",
-    "@angular/compiler": "^2.4.0",
-    "@angular/core": "^2.4.0",
-    "@angular/forms": "^2.4.0",
-    "@angular/http": "^2.4.0",
-    "@angular/platform-browser": "^2.4.0",
-    "@angular/platform-browser-dynamic": "^2.4.0",
-    "@angular/router": "^3.4.0",
-    "core-js": "^2.4.1",
-    "rxjs": "^5.1.0",
-    "zone.js": "^0.7.6",
-    "systemjs": "0.19.37",
+    "@angular/animations": "^4.0.6",
+    "@angular/common": "^4.0.6",
+    "@angular/compiler": "^4.0.6",
+    "@angular/compiler-cli": "^4.0.6",
+    "@angular/core": "^4.0.6",
+    "@angular/forms": "^4.0.6",
+    "@angular/http": "^4.0.6",
+    "@angular/platform-browser": "^4.0.6",
+    "@angular/platform-browser-dynamic": "^4.0.6",
+    "@angular/platform-server": "^4.0.6",
+    "@angular/router": "^4.0.6",
     "bootstrap": "^3.3.6",
-    "jquery": "^2.2.2"
+    "core-js": "^2.4.1",
+    "jquery": "^2.2.2",
+    "rxjs": "^5.1.0",
+    "systemjs": "0.19.37",
+    "zone.js": "^0.7.6"
   },
   "devDependencies": {
     "@types/es6-shim": "0.0.29",
     "live-server": "^0.8.2",
-    "typescript": "^2.0.0"
+    "typescript": "^2.6.2"
   }
 }

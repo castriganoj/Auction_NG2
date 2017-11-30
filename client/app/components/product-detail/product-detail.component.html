@@ -6,8 +6,8 @@
         <p>{{ product.description }}</p>
     </div>
     <div class="ratings">
-        <p class="pull-right">{{ reviews.length }} reviews</p>
-        <p><auction-stars [rating]="product.rating" ></auction-stars></p>
+        <p class="pull-right">{{ reviews?.length }} reviews</p>
+        <p><auction-stars [rating]="product?.rating" ></auction-stars></p>
     </div>
 </div>
 <div class="well" id="reviews-anchor">

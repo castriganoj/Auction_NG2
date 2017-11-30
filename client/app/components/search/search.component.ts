@@ -5,7 +5,6 @@ import { ProductService } from '../../services/product.service';
 @Component({
   selector: 'auction-search',
   templateUrl: 'app/components/search/search.component.html',
-  providers: [ProductService]
 })
 
 export default class SearchComponent {
@@ -18,22 +17,22 @@ export default class SearchComponent {
     this.formModel = fb.group({
       'title': [null, Validators.minLength(3)],
       'price': [null, positiveNumberValidator],
-      'category': [-1]
+      'category': ['']
     })
   }
 
-  onSearch(){
-    if (this.formModel.valid){
-      console.log(this.formModel.value);
+  onSearch() {
+    if (this.formModel.valid) {
+      this.productService.searchEvent.emit(this.formModel.value);
     }
   }
 
 }
 
- function positiveNumberValidator(control: FormControl): any {
+function positiveNumberValidator(control: FormControl): any {
   if (!control.value) return null;
   const price = parseInt(control.value);
   return price === null ||
     typeof price === 'number' &&
     price > 0 ? null : { positivenumber: true };
-  }
+}

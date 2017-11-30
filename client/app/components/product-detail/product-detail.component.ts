@@ -1,7 +1,10 @@
-import {Component} from '@angular/core';
-import {ActivatedRoute} from '@angular/router';
-import {Product, Review, ProductService} from '../../services/product.service';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Product, Review, ProductService } from '../../services/product.service';
 import StarsComponent from '../stars/stars.component';
+
+import { Observable } from 'rxjs/observable';
+import { Subscription } from 'rxjs/subscription';
 
 @Component({
   selector: 'auction-product-page',
@@ -9,6 +12,7 @@ import StarsComponent from '../stars/stars.component';
   templateUrl: 'app/components/product-detail/product-detail.component.html'
 })
 export default class ProductDetailComponent {
+  productId: number;
   product: Product;
   reviews: Review[];
 
@@ -17,17 +21,33 @@ export default class ProductDetailComponent {
 
   isReviewHidden: boolean = true;
 
-  constructor(route: ActivatedRoute, productService: ProductService) {
+  private subscription: Subscription;
 
-    let prodId: number = parseInt(route.snapshot.params['productId']);
-    this.product = productService.getProductById(prodId);
+  constructor(route: ActivatedRoute, private productService: ProductService) {
+    this.productId = parseInt(route.snapshot.params['productId']);
 
-    this.reviews = productService.getReviewsForProduct(this.product.id);
+
+  }
+
+  ngOnInit() {
+    this.productService
+      .getProductById(this.productId)
+      .subscribe(
+      product => {
+        this.product = product;
+      },
+      error => console.error(error));
+
+      this.productService
+      .getReviewsForProduct(this.productId)
+      .subscribe(
+        reviews => this.reviews = reviews,
+        error => console.error(error));
   }
 
   addReview() {
     let review = new Review(0, this.product.id, new Date(), 'Anonymous',
-        this.newRating, this.newComment);
+      this.newRating, this.newComment);
     console.log("Adding review " + JSON.stringify(review));
     this.reviews = [...this.reviews, review];
     this.product.rating = this.averageRating(this.reviews);
