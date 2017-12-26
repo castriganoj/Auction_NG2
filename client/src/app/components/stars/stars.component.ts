@@ -2,7 +2,7 @@
 import {Component, Input, Output, EventEmitter} from '@angular/core';
 
 @Component({
-  templateUrl: 'app/components/stars/stars.component.html',
+  templateUrl: './stars.component.html',
   selector: 'auction-stars',
   inputs: ['rating', 'count'] // <1>
 })

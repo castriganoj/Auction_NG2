@@ -6,7 +6,7 @@ import 'rxjs/add/operator/debounceTime';
 
 @Component({
   selector: 'auction-home-page',
-  styleUrls: ['app/components/home/home.component.css'],
+  styleUrls: ['./home.component.css'],
   template: `
     <div class="row carousel-holder">
       <div class="col-md-12">

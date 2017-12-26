@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs/subscription';
 @Component({
   selector: 'auction-product-page',
   styles: ['auction-stars.large {font-size: 24px;}'],
-  templateUrl: 'app/components/product-detail/product-detail.component.html'
+  templateUrl: './product-detail.component.html'
 })
 export default class ProductDetailComponent {
   productId: number;
