@@ -3,3 +3,4 @@ dist
 jspm_packages
 typings
 node_modules
+server/build
