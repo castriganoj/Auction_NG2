@@ -8,7 +8,7 @@ import {Product, Review, getProducts, getProductById, getReviewsByProductId} fro
 const app = express();
 
 app.use('/node_modules', express.static(path.join('../client/node_modules')));
-app.use('/',             express.static(path.join('../client/src')));
+app.use('/',             express.static(path.join('../client/dist')));
 
 app.get('/products', (req, res) => {
   res.json(getProducts(req.query));
