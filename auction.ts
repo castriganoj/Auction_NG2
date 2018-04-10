@@ -3,8 +3,6 @@ import * as path from 'path';
 import {Server as HttpServer} from 'http';
 import {Product, Review, getProducts, getProductById, getReviewsByProductId} from './model';
 
-// HTTP API
-
 const app = express();
 
 app.use('/node_modules', express.static(path.join('./client/node_modules')));
