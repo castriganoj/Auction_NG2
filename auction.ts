@@ -26,8 +26,26 @@ app.get('/products/:id/reviews', (req, res) => {
 //   console.log('Listening on %s %s', address, port);
 // });
 
+var port = normalizePort(process.env.PORT || '3000');
 
-const httpServer: HttpServer = app.listen(8000, () => {
-  const {address, port} = httpServer.address();
-  console.log('Listening on %s %s', address, port);
+
+var httpServer = app.listen(port, function () {
+    var _a = httpServer.address(), address = _a.address, port = _a.port;
+    console.log('Listening on %s %s', address, port);
 });
+
+function normalizePort(val) {
+  var port = parseInt(val, 10);
+
+  if (isNaN(port)) {
+    // named pipe
+    return val;
+  }
+
+  if (port >= 0) {
+    // port number
+    return port;
+  }
+
+  return false;
+}
