@@ -4,8 +4,8 @@ var express = require("express");
 var path = require("path");
 var model_1 = require("./model");
 var app = express();
-app.use('/node_modules', express.static(path.join('./client/node_modules')));
-app.use('/', express.static(path.join('./client/dist')));
+app.use('/node_modules', express.static(path.join('../client/node_modules')));
+app.use('/', express.static(path.join('../client/dist')));
 app.get('/products', function (req, res) {
     res.json(model_1.getProducts(req.query));
 });
